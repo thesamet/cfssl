@@ -72,9 +72,6 @@ func genkeyMain(args []string, c cli.Config) (err error) {
 
 // Validator returns true if the csr has at least one host
 func Validator(req *csr.CertificateRequest) error {
-	if len(req.Hosts) == 0 {
-		return cferr.Wrap(cferr.PolicyError, cferr.InvalidRequest, errors.New("missing hosts field"))
-	}
 	return nil
 }
 
